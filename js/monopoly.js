@@ -37,7 +37,6 @@ Monopoly.getPlayersCell = function (player) {
     return player.closest(".cell");
 };
 
-
 Monopoly.getPlayersMoney = function (player) {
     return parseInt(player.attr("data-money"));
 };
@@ -45,6 +44,7 @@ Monopoly.getPlayersMoney = function (player) {
 Monopoly.updatePlayersMoney = function (player, amount) {
     var playersMoney = parseInt(player.attr("data-money"));
     playersMoney -= amount;
+    Monopoly.updateScore(player, playersMoney);
     if (playersMoney < 0) {
         Monopoly.removePlayer(player);
         var popup = Monopoly.getPopup("broke");
@@ -61,20 +61,29 @@ Monopoly.updatePlayersMoney = function (player, amount) {
 };
 
 
-Monopoly.removePlayer = function (player) {
-    player.addClass("broke").detach();
-    $("#brokePlayers").append(player);
-    var playerId = player.attr("id");
-    setTimeout(function () {
-        $(".game.cell." + playerId)
-            .removeClass(playerId)
-            .removeAttr("data-owner")
-            .removeAttr("data-rent")
-            .addClass("available");
-    }, 500);
-
+Monopoly.updateScore = function (player, amount) {
+    var score = $(".playerCash." + player.attr("id")).children();
+    if (amount < 0) {
+        score.text("BROKE");
+    }
+    score.text(amount);
 
 },
+
+    Monopoly.removePlayer = function (player) {
+        player.addClass("broke").detach();
+        $("#brokePlayers").append(player);
+        var playerId = player.attr("id");
+        setTimeout(function () {
+            $(".game.cell." + playerId)
+                .removeClass(playerId)
+                .removeAttr("data-owner")
+                .removeAttr("data-rent")
+                .addClass("available");
+        }, 500);
+
+
+    },
 
     Monopoly.rollDice = function () {
         var result1 = Math.floor(Math.random() * 6) + 1;
@@ -357,6 +366,9 @@ Monopoly.createPlayers = function (numOfPlayers) {
             player.addClass("current-turn");
         }
         player.attr("data-money", Monopoly.moneyAtStart);
+        var playerScore = $(".playerFunds .playerCash.player" + i);
+        playerScore.css("display", "inline");
+        playerScore.children().text(Monopoly.moneyAtStart);
     }
 };
 
