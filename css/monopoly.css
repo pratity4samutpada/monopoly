@@ -173,6 +173,19 @@ body{
     display:inline-block;
 }
 
+.player.jailed{
+    background-image: url("../images/sadface.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.player.ownProperty{
+    background-image: url("../images/happyface.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
 .bottom.game.cell:not(.corner) .player , .top.game.cell:not(.corner) .player{
         width: 40%;
 }
@@ -198,6 +211,19 @@ body{
 .player#player4 , .player4.cell .content{
     background-color: #d061cd;
 }
+.player#player5 , .player5.cell .content {
+    background-color: #464d11;
+}
+.player#player6 , .player6.cell .content {
+    background-color: #890c36;
+}
+
+.cell.cash .content{
+    color:white;
+    font-size:50%;
+    border:1px solid black;
+
+}
 
 .player.current-turn{
     background-image:url(../images/crown.png);
@@ -214,7 +240,7 @@ body{
     width: 25%;
     height: 25%;
     margin: 4%;
-    background-color: black;
+    background-color: #364c9c;
     border-radius: 100px;
     opacity:0;
 }

@@ -25,12 +25,12 @@
                 <div id="cell31" class="top right corner game cell go-to-jail"><div class="content"></div></div>
                 
                 <div id="cell20" class="game cell left available property" data-group="group4"><div class="content"></div><div class="title"></div></div>
+                <div id="brokePlayers" class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
+                <div class="cell player1 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+                <div class="cell player2 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
@@ -39,9 +39,9 @@
                 <div class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
+                <div class="cell player3 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+                <div class="cell player4 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
@@ -50,9 +50,9 @@
                 <div class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
+                <div class="cell player5 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
+                <div class="cell player6 cash"><span class="content" style="display:none"></span></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
@@ -74,8 +74,8 @@
                 <div class="cell"></div>
                 <div id="dice1" class="cell dice clickable shadowed">
                         <div class="dice-dot num2 num3 num4 num5 num6"></div>
-                        <div class="dice-dot right num5 num6"></div><br />
-                        <div class="dice-dot num4 num6"></div>
+                        <div class="dice-dot right num4 num5 num6"></div><br />
+                        <div class="dice-dot num6"></div>
                         <div class="dice-dot num1 num5 num3"></div>
                         <div class="dice-dot num6"></div><br />
                         <div class="dice-dot num4 num5 num6"></div>
@@ -83,9 +83,9 @@
                 </div>
                 <div class="cell"></div>
                 <div id="dice2" class="cell dice clickable shadowed">
-                        <div class="dice-dot num2 num3 num5 num6"></div>
+                        <div class="dice-dot num2 num3 num4 num5 num6"></div>
                         <div class="dice-dot right num4 num5 num6"></div><br />
-                        <div class="dice-dot num4 num6"></div>
+                        <div class="dice-dot num6"></div>
                         <div class="dice-dot num1 num5 num3"></div>
                         <div class="dice-dot num6"></div><br />
                         <div class="dice-dot num4 num5 num6"></div>
@@ -197,6 +197,13 @@
                                 <div class="popup-title"></div>
                                 <div class="popup-content">
                                         <div id="text-placeholder"></div>
+                                        <button id="ok" class="clickable">OK</button>
+                                </div>
+                        </div>
+                        <div id="broke" class="popup-page" style="display:none;">
+                                <div class="popup-title">Out of Money!</div>
+                                <div class="popup-content">
+                                        <div id="text-placeholder"><span id="player-placeholder"></span> is broke!</div>
                                         <button id="ok" class="clickable">OK</button>
                                 </div>
                         </div>
