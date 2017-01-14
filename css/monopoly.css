@@ -246,15 +246,32 @@ body {
 }
 
 .playerFunds {
-    border: 5px solid lawngreen;
-    background-color: white;
+    background-color: rgb(199, 252, 227);
     text-align: center;
     font-family: "Century Gothic";
     font-size: larger;
+    position:absolute;
+    width:10%;
+    box-sizing: border-box;
+    margin:10px;
+
 }
 
+@media screen and (max-width:1200px){
+    .playerFunds{
+        position: relative;
+        width:auto;
+        margin:0;
+        font-size: smaller;
+
+
+    }
+
+}
+
+
 .playerFunds .playerCash {
-    margin: 20px;
+    margin: 30px;
     display: none;
 
 }
