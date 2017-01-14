@@ -175,6 +175,10 @@ body {
     background-position: center;
 }
 
+.player.broke {
+    opacity: 0;
+}
+
 .player.ownProperty {
     background-image: url("../images/happyface.png");
     background-size: contain;
@@ -250,32 +254,26 @@ body {
     text-align: center;
     font-family: "Century Gothic";
     font-size: larger;
-    position:absolute;
-    width:10%;
+    position: absolute;
+    width: 10%;
     box-sizing: border-box;
-    margin:10px;
+    margin: 10px;
 
 }
 
-@media screen and (max-width:1200px){
-    .playerFunds{
+@media screen and (max-width: 1200px) {
+    .playerFunds {
         position: relative;
-        width:auto;
-        margin:0;
+        width: auto;
+        margin: 0;
         font-size: smaller;
-
 
     }
 
 }
 
-
 .playerFunds .playerCash {
     margin: 30px;
     display: none;
 
-}
-
-.broke {
-    opacity: 0;
 }
